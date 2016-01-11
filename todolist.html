@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="TestAngularJS">
+  <head>
+    <meta charset="utf-8">
+    <title>Test AngularJS</title>
+  </head>
+  <body ng-controller="ToDoController">
+    <a href="index.html">Volver</a></br>
+    <ul>
+      <li ng-repeat="actividad in toDo">
+        {{actividad.descripcion}} - {{actividad.fecha | date : 'short'}} - <a href="#" ng-click="removeActiv(actividad)"> x</a>
+      </li>
+    </ul>
+    <form ng-submit="addActiv()">
+      <input type="text" ng-model="newActiv.descripcion"></input>
+      <input type="datetime-local" ng-model="newActiv.fecha"></input>
+      <input type="submit" value="Guardar Actividad"></input>
+    </form></br>
+    <button ng-click="clean()">Limpiar</button>
+  </body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="angular-local-storage.min.js"></script>
+<script src="controller.js"></script>
+</html>

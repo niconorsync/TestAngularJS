@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="TestAngularJS">
+  <head>
+    <meta charset="utf-8">
+    <title>Test AngularJS</title>
+  </head>
+  <body ng-controller="ListaDeLibros">
+    <a href="todolist.html">Tareas</a></br>
+    <input ng-model="newPost.title" placeholder="title"></input></br>
+    <textarea ng-model="newPost.body" placeholder="body"></textarea></br>
+    <button ng-click="addPost()">Enviar</button>
+  </br>
+<ul>
+  <li ng-repeat="post in posts">
+    <p>{{post.title}}.<strong>{{post.body}}</strong></p>
+  </li>
+</ul>
+
+  </body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="angular-local-storage.min.js"></script>
+<script src="controller.js"></script>
+</html>
